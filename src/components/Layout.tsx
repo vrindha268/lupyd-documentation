@@ -1,36 +1,40 @@
-import { Outlet } from 'react-router-dom';
-import { Navigation } from './Navigation';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
+import { useState } from 'react';
 
 export function Layout() {
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const location = useLocation();
+
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navigation />
+    <div style={{ backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' }}>
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={() => setSidebarOpen(!isSidebarOpen)} />
+      
       <div style={{ 
-        padding: '2rem 0', 
-        borderBottom: '1px solid var(--border-color)',
-        backgroundColor: '#fafafa'
+        display: 'flex', 
+        flexDirection: 'column', 
+        minHeight: '100vh',
+        marginLeft: isSidebarOpen ? '280px' : '70px',
+        transition: 'margin-left 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
       }}>
-        <div className="container" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-          textAlign: 'center'
+        <main style={{ 
+          flex: 1, 
+          padding: '4rem 6rem', 
+          width: '100%', 
+          maxWidth: '1100px',
+          margin: '0 auto',
         }}>
-          <div style={{ fontWeight: 800, fontSize: '1.5rem', letterSpacing: '-0.025em' }}>Lupyd</div>
-          <p style={{ maxWidth: '600px', fontSize: '1rem', color: '#444' }}>
-            Promises security, data privacy, and a new social media experience to users and businesses alike.
-          </p>
-          <div style={{ fontSize: '0.75rem', fontWeight: 600, marginTop: '0.5rem' }}>
-            © 2026 Lupyd. All rights reserved.
+          {/* Fading animation trigger on route change */}
+          <div key={location.pathname} style={{ animation: 'contentFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}>
+            <Outlet />
           </div>
+        </main>
+        
+        <div style={{ padding: '0 6rem', maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
+          <Footer />
         </div>
       </div>
-      <main style={{ flex: 1 }}>
-        <Outlet />
-      </main>
-      <Footer />
     </div>
   );
 }
