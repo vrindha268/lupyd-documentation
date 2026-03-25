@@ -1,108 +1,181 @@
-import { Monitor, Download, ExternalLink, Apple, Play } from 'lucide-react';
+import { Terminal, Copy, CheckCircle2 } from 'lucide-react';
 
 export function Installation() {
   return (
-    <div className="container section">
-      <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-        <h1 style={{ fontSize: '4rem', fontWeight: 800, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>Download Lupyd</h1>
-        <p style={{ fontSize: '1.5rem', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6, color: '#333' }}>
-          Secure, private, and encrypted communication on any device. Follow our professional guide to get started.
+    <div style={{ maxWidth: '850px' }}>
+      <div style={{ marginBottom: '3.5rem' }}>
+        <h1 style={{ 
+          fontSize: '36px', 
+          fontWeight: 700, 
+          letterSpacing: '-0.02em', 
+          lineHeight: 1.2,
+          marginBottom: '1.5rem',
+          color: '#000000'
+        }}>
+          Getting Started
+        </h1>
+        
+        <p style={{ fontSize: '1.1rem', color: '#444444', lineHeight: 1.75, fontWeight: 400, margin: 0 }}>
+          Lupyd is designed to be instantly accessible across all major platforms, including Windows, Linux, Android, and Apple devices. The onboarding experience is unified—no complex setup, no platform-specific barriers.
         </p>
       </div>
 
-      {/* Main Download Options */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', marginBottom: '6rem' }}>
+      <section style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontSize: '24px', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1.5rem', color: '#000000' }}>
+          Install Lupyd (All Users)
+        </h2>
+        <p style={{ fontSize: '1.1rem', color: '#444444', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+          Getting started with Lupyd is straightforward and consistent for everyone:
+        </p>
         
-        {/* Android Section */}
-        <div style={{ border: '1px solid var(--border-color)', padding: '3rem', position: 'relative' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-            <Play size={40} />
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700 }}>Android</h2>
-          </div>
-          <p style={{ marginBottom: '2rem', fontSize: '1.1rem' }}>Get the official app from the Google Play Store for your Android devices.</p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>01</div>
-              <div>Open <strong>Google Play Store</strong> on your device.</div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>02</div>
-              <div>Search for <code style={{ background: '#eee', padding: '2px 6px' }}>Lupyd</code> in the search bar.</div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>03</div>
-              <div>Tap <strong>Install</strong> and wait for the download to complete.</div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>04</div>
-              <div>Open the app and set up your secure profile.</div>
-            </div>
-          </div>
-          <button style={{ width: '100%', marginTop: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-            Go to Play Store <ExternalLink size={18} />
-          </button>
+        <div style={{ 
+          backgroundColor: '#fafafa', 
+          border: '1px solid #eaeaea', 
+          borderRadius: '8px', 
+          padding: '2rem',
+          marginBottom: '1rem'
+        }}>
+          <ol style={{ 
+            margin: 0, 
+            paddingLeft: '1.25rem', 
+            fontSize: '1.1rem', 
+            color: '#111111',
+            lineHeight: 1.8,
+            fontWeight: 500
+          }}>
+            <li style={{ paddingLeft: '0.5rem', marginBottom: '0.5rem' }}>Open your device's app store</li>
+            <li style={{ paddingLeft: '0.5rem', marginBottom: '0.5rem' }}>Search for <strong>“Lupyd”</strong></li>
+            <li style={{ paddingLeft: '0.5rem', marginBottom: '0.5rem' }}>Tap Install</li>
+            <li style={{ paddingLeft: '0.5rem', marginBottom: '0.5rem' }}>Launch the application</li>
+            <li style={{ paddingLeft: '0.5rem' }}>Create your account or sign in</li>
+          </ol>
         </div>
-
-        {/* iOS Section */}
-        <div style={{ border: '1px solid var(--border-color)', padding: '3rem', position: 'relative' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-            <Apple size={40} />
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700 }}>iOS</h2>
-          </div>
-          <p style={{ marginBottom: '2rem', fontSize: '1.1rem' }}>Experience Lupyd on iPhone and iPad via the official Apple App Store.</p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>01</div>
-              <div>Launch the <strong>App Store</strong> on your iPhone/iPad.</div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>02</div>
-              <div>Search for <strong>"Lupyd"</strong> in the Search tab.</div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>03</div>
-              <div>Tap <strong>Get</strong> and authenticate your download.</div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div style={{ fontWeight: 800, minWidth: '24px' }}>04</div>
-              <div>Find Lupyd on your home screen and tap to open.</div>
-            </div>
-          </div>
-          <button style={{ width: '100%', marginTop: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-            Go to App Store <ExternalLink size={18} />
-          </button>
-        </div>
-
-      </div>
-
-      {/* Desktop Section */}
-      <div style={{ backgroundColor: 'var(--primary-text)', color: 'var(--primary-bg)', padding: '5rem 3rem', marginBottom: '6rem' }}>
-        <div style={{ maxWidth: '800px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem' }}>
-            <Monitor size={48} />
-            <h2 style={{ fontSize: '3rem', fontWeight: 700 }}>All Other Platforms</h2>
-          </div>
-          <p style={{ fontSize: '1.25rem', marginBottom: '3rem', lineHeight: 1.6 }}>
-            Lupyd is built to be universal. Access our platform on Windows, macOS, Linux, or directly through your favorite web browser.
+        <div style={{
+          borderLeft: '4px solid #eaeaea',
+          paddingLeft: '1rem',
+          marginTop: '1.5rem'
+        }}>
+          <p style={{ fontSize: '1.05rem', color: '#555555', fontStyle: 'italic', margin: 0 }}>
+            That’s it—no additional configuration is required.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
-            <div>
-              <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.3)', paddingBottom: '0.5rem' }}>Desktop</h4>
-              <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>Download native clients for professional workflows and native notifications.</p>
-              <a href="https://www.lupyd.com/downloads" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 600, borderBottom: '2px solid white', paddingBottom: '2px' }}>
-                Visit lupyd.com/downloads <Download size={16} />
-              </a>
-            </div>
-            <div>
-              <h4 style={{ fontSize: '1.25rem', marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.3)', paddingBottom: '0.5rem' }}>Web</h4>
-              <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem' }}>No installation required. Jump straight into your workspace from any browser.</p>
-              <a href="https://app.lupyd.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 600, borderBottom: '2px solid white', paddingBottom: '2px' }}>
-                Launch Web App <ExternalLink size={16} />
-              </a>
-            </div>
-          </div>
         </div>
+      </section>
+
+      <section style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontSize: '24px', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1.5rem', color: '#000000', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Terminal size={24} color="#000000" />
+          Terminal-Based Installation
+        </h2>
+        <p style={{ fontSize: '1.1rem', color: '#444444', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+          For users who prefer a terminal-based setup (Linux / Advanced Users), Lupyd can be installed using simple commands:
+        </p>
+        
+        <div style={{
+          backgroundColor: '#111111',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+        }}>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            backgroundColor: '#222222',
+            padding: '0.75rem 1.25rem',
+            borderBottom: '1px solid #333333'
+          }}>
+            <span style={{ color: '#888888', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Bash</span>
+            <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#888888' }} title="Copy to clipboard">
+              <Copy size={16} />
+            </button>
+          </div>
+          <pre style={{ 
+            margin: 0, 
+            padding: '1.5rem', 
+            overflowX: 'auto',
+            color: '#f8f8f2',
+            fontSize: '0.95rem',
+            lineHeight: 1.6,
+            fontFamily: 'monospace'
+          }}>
+            <code>
+<span style={{ color: '#888888' }}># Update system packages</span><br/>
+<span style={{ color: '#ff79c6' }}>sudo</span> apt update<br/><br/>
+<span style={{ color: '#888888' }}># Download Lupyd package (example)</span><br/>
+<span style={{ color: '#ff79c6' }}>wget</span> https://lupyd.com/download/lupyd.deb<br/><br/>
+<span style={{ color: '#888888' }}># Install Lupyd</span><br/>
+<span style={{ color: '#ff79c6' }}>sudo</span> dpkg -i lupyd.deb<br/><br/>
+<span style={{ color: '#888888' }}># Fix dependencies (if required)</span><br/>
+<span style={{ color: '#ff79c6' }}>sudo</span> apt-get install -f<br/><br/>
+<span style={{ color: '#888888' }}># Launch Lupyd</span><br/>
+lupyd
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', marginBottom: '4rem' }}>
+        <section>
+          <h3 style={{ fontSize: '20px', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1.25rem', color: '#000000' }}>
+            Cross-Platform Consistency
+          </h3>
+          <p style={{ fontSize: '1.05rem', color: '#555555', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+            Whether you’re using mobile, desktop, or terminal, Lupyd delivers the same seamless experience:
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', color: '#111111', fontWeight: 500 }}>
+              <CheckCircle2 size={20} color="#000000" /> Unified interface
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', color: '#111111', fontWeight: 500 }}>
+              <CheckCircle2 size={20} color="#000000" /> Secure login
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', color: '#111111', fontWeight: 500 }}>
+              <CheckCircle2 size={20} color="#000000" /> Real-time synchronization
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style={{ fontSize: '20px', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1.25rem', color: '#000000' }}>
+            Built-In Security from Day One
+          </h3>
+          <p style={{ fontSize: '1.05rem', color: '#555555', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+            From the moment you install Lupyd, your protection is guaranteed:
+          </p>
+          <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', color: '#111111', fontWeight: 500 }}>
+              <CheckCircle2 size={20} color="#000000" /> Encryption is automatically enabled
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', color: '#111111', fontWeight: 500 }}>
+              <CheckCircle2 size={20} color="#000000" /> Your data remains private
+            </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', color: '#111111', fontWeight: 500 }}>
+              <CheckCircle2 size={20} color="#000000" /> No manual security setup is required
+            </li>
+          </ul>
+        </section>
       </div>
+
+      <hr style={{ border: 'none', borderTop: '1px solid #eaeaea', margin: '4rem 0' }} />
+
+      <section style={{ backgroundColor: '#fafafa', border: '1px solid #eaeaea', borderRadius: '8px', padding: '2rem' }}>
+        <h3 style={{ fontSize: '20px', fontWeight: 600, letterSpacing: '-0.01em', marginBottom: '1.25rem', color: '#000000' }}>
+          Quick Start Summary
+        </h3>
+        <ul style={{ 
+            margin: 0, 
+            paddingLeft: '1.5rem', 
+            fontSize: '1.1rem', 
+            color: '#111111',
+            lineHeight: 1.8,
+            fontWeight: 500,
+            listStyleType: 'disc'
+          }}>
+          <li style={{ paddingLeft: '0.5rem', marginBottom: '0.5rem' }}>Install Lupyd</li>
+          <li style={{ paddingLeft: '0.5rem', marginBottom: '0.5rem' }}>Sign in or create an account</li>
+          <li style={{ paddingLeft: '0.5rem' }}>Start exploring content, connecting, and collaborating.</li>
+        </ul>
+      </section>
 
     </div>
   );

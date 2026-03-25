@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
-  Search, PanelLeftClose, PanelLeft, Book, Rocket, Layers, Monitor, 
-  ShieldCheck, Code2, Briefcase, Settings, Map, CreditCard, 
-  History, HelpCircle, LifeBuoy, Scale
+  Search, PanelLeftClose, PanelLeft, Book, Rocket, Layers, 
+  Code2, Briefcase, Settings, Map,
+  TrendingUp, MessageSquare, Library
 } from 'lucide-react';
 
 interface NavItem {
@@ -18,16 +18,12 @@ const navSections: NavItem[] = [
   { id: 'start', label: 'Getting Started', icon: Rocket, path: '/installation' },
   { id: 'dev', label: 'Developer Docs', icon: Code2, path: '/guide' },
   { id: 'features', label: 'Core Features', icon: Layers, path: '/features' },
-  { id: 'overview', label: 'Platform Overview', icon: Monitor, path: '/overview' },
-  { id: 'security', label: 'Security & Privacy', icon: ShieldCheck, path: '/security' },
+  { id: 'start-fast', label: 'Start Fast & Go Viral', icon: TrendingUp, path: '/start-fast' },
   { id: 'cases', label: 'Use Cases', icon: Briefcase, path: '/cases' },
   { id: 'settings', label: 'Settings', icon: Settings, path: '/settings' },
   { id: 'guides', label: 'Platform Guides', icon: Map, path: '/guides' },
-  { id: 'pricing', label: 'Pricing', icon: CreditCard, path: '/pricing' },
-  { id: 'changelog', label: 'Changelog', icon: History, path: '/changelog' },
-  { id: 'faq', label: 'FAQ', icon: HelpCircle, path: '/faq' },
-  { id: 'support', label: 'Support', icon: LifeBuoy, path: '/support' },
-  { id: 'legal', label: 'Legal', icon: Scale, path: '/legal' },
+  { id: 'groups', label: 'Group Chats', icon: MessageSquare, path: '/groups' },
+  { id: 'docs-support', label: 'Docs & Support', icon: Library, path: '/docs-support' },
 ];
 
 export function Sidebar({ isOpen, toggleSidebar }: { isOpen: boolean, toggleSidebar: () => void }) {

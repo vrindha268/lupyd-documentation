@@ -3,13 +3,16 @@ import { NetworkBackground } from './NetworkBackground';
 
 interface IntroScreenProps {
   onComplete: () => void;
+  title?: React.ReactNode;
+  subtitle?: string;
+  duration?: number;
 }
 
-export function IntroScreen({ onComplete }: IntroScreenProps) {
+export function IntroScreen({ onComplete, title = "Lupyd", subtitle = "System Documentation", duration = 4000 }: IntroScreenProps) {
   const [stage, setStage] = useState<'loading' | 'fadingOut'>('loading');
 
   useEffect(() => {
-    // Stage 1: Wait 4 seconds while showing beautiful sequence
+    // Stage 1: Wait duration while showing beautiful sequence
     const timer1 = setTimeout(() => {
       setStage('fadingOut');
       
@@ -19,10 +22,10 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
       }, 2000); // Wait 2s for fade out
       
       return () => clearTimeout(timer2);
-    }, 4000); // 4 second presentation length
+    }, duration); 
     
     return () => clearTimeout(timer1);
-  }, [onComplete]);
+  }, [onComplete, duration]);
 
   return (
     <div
@@ -129,7 +132,7 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
             WebkitTextFillColor: 'transparent',
             position: 'relative'
           }}>
-            Lupyd
+            {title}
           </h1>
         </div>
         
@@ -152,7 +155,7 @@ export function IntroScreen({ onComplete }: IntroScreenProps) {
           margin: 0,
           textShadow: '0 2px 4px rgba(0,0,0,0.05)'
         }}>
-          System Documentation
+          {subtitle}
         </p>
       </div>
     </div>
