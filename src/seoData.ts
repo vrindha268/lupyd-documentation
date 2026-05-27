@@ -1,7 +1,7 @@
 export interface PageSeo {
   title: string;
   description: string;
-  schemas: any[];
+  schemas: Record<string, unknown>[];
 }
 
 export const seoData: Record<string, PageSeo> = {
